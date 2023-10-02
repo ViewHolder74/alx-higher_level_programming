@@ -1,2 +1,3 @@
 #!/bin/bash
-echo "Best School: $((88+10))"
+export PYCODE="Best School: $((88+10))"
+echo "$PYCODE"
