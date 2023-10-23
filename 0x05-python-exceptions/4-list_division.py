@@ -5,7 +5,7 @@ def list_division(my_list_1, my_list_2, list_length):
         try:
             quot = my_list_1[i] / my_list_2[i]
             res.append(quot)
-        except (ValueError, TypeError, NameError):
+        except (ValueError, TypeError):
             print("wrong type")
             res.append(0)
         except ZeroDivisionError:
