@@ -5,7 +5,6 @@ Acess and update private attribute
 """
 
 
-
 class Square:
     """
     class that defines a square
