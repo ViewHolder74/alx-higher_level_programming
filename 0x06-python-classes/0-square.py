@@ -1,8 +1,10 @@
 #!/usr/bin/python3
+"""
+0. My first square
+An empty class Square that defines a square
+"""
+
 
 class Square:
-    """
-    This is an empty class definition for a square.
-    It doesn't have any attributes or methods.
-    """
+    """Empty class that defines a scquare"""
     pass
