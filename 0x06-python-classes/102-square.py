@@ -59,10 +59,7 @@ class Square:
             return not self.__eq__(other)
 
     def __gt__(self, other):
-        """
-        compares if  square are grater than
-        """
-        
+        """ compares if  square are grater than """
         if isinstance(other, Square):
             return (self.area() > other.area())
         return (False)
