@@ -1,0 +1,95 @@
+#!/usr/bin/python3
+"""Task 5. Detect instance deletion"""
+
+
+class Rectangle:
+    """Class Rectangle that defines a rectangle"""
+
+    def __init__(self, width=0, height=0):
+        """Function that initializes instances for width & height"""
+
+        self.height = height
+        self.width = width
+
+    @property
+    def height(self):
+        """Function that gets height instance attribute"""
+
+        return (self.__height)
+
+    @height.setter
+    def height(self, value):
+        """
+        function that sets height instance attribute
+        Raise TypeError and ValueError if not integer or natural number resp.
+        """
+
+        if not isinstance(value, int):
+            raise TypeError("height must be an integer")
+
+        if value < 0:
+            raise ValueError("height must be >= 0")
+
+        self.__height = value
+
+    @property
+    def width(self):
+        """Function that gets width instance attribute"""
+
+        return (self.__width)
+
+    @width.setter
+    def width(self, value):
+        """
+        Function that sets width instance attribute
+        Raise TypeError & ValueError if not integer or natural number resp.
+        """
+
+        if not isinstance(value, int):
+            raise TypeError("width must be an integer")
+
+        if value < 0:
+            raise ValueError("width must be >= 0")
+
+        self.__width = value
+
+    def area(self):
+        """Function that computes area of a rectangle"""
+
+        return (self.__width * self.__height)
+
+    def perimeter(self):
+        """Function that computes perimeter of a rectangle"""
+
+        if self.__width == 0 or self.__height == 0:
+            return (0)
+        a = self.__width
+        b = self.__height
+        return (a + b)
+
+    def __str__(self) -> str:
+        """Function that defines instance method to print rectangle with #"""
+
+        if self.__width == 0 or self.__height == 0:
+            return ("")
+
+        rectangle = ""
+
+        for i in range(self.__height):
+            for j in range(self.__width):
+                rectangle += "#"
+
+            if i < self.__height - 1:
+                rectangle += "\n"
+
+        return (rectangle)
+
+    def __repr__(self):
+        """Function that defines instance method to return rectangle with #"""
+
+        return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
+
+    def __del__(self):
+        """Function that defines instance method to delete rectangle"""
+
+        print("Bye rectangle...")
