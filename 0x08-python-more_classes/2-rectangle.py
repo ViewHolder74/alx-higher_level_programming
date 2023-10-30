@@ -47,6 +47,8 @@ class Rectangle:
 
     def perimeter(self):
         """ claculate perimeter of rectangle """
-        a = self.__width * 2
-        b = self.__height * 2
+        if self. width != 0:
+            a = self.__width * 2
+        if self.height != 0:
+            b = self.__height * 2
         return (a + b)
