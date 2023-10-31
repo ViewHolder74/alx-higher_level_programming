@@ -1,0 +1,32 @@
+""" 0-add_integer.txt """
+
+Importing function from the module:
+    >>> add_integer = __import__('0-add_integer').add_integer
+
+Add 1 and 2
+    >>> add_integer(1, 2)
+    3
+
+Add with negative number 100 and -2
+    >>> add_integer(100, -2)
+    98
+
+Add with one argument and default
+    >>> add_integer(2)
+    100
+
+Add a float and negative integer 100.3 and -2
+    >>> add_integer(100.3, -2)
+    98
+
+Add integer and string 4 and "School"
+    >>> add_integer(4, "School")
+    Traceback (most recent call last):
+        ...
+    TypeError: b must be an integer
+
+Add None
+    >>> add_integer(None)
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
