@@ -92,13 +92,18 @@ Task 11: Write a class Square that inherits from Rectangle (9-rectangle.py). (ta
     print() should print, and str() should return, the square description: [Square] <width>/<height>
 
 
-Task 12 : 
+Task 12 : Write a class MyInt that inherits from int:
+
+    MyInt is a rebel. MyInt has == and != operators inverted
+    You are not allowed to import any module
 
 
 
 
 
+Task 13: Write a function that adds a new attribute to an object if it’s possible:
 
+    Raise a TypeError exception, with the message can't add new attribute if the object can’t have new attribute
+    You are not allowed to use try/except
+    You are not allowed to import any module
 
-
-Task 13: 
