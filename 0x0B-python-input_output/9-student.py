@@ -3,12 +3,7 @@
 
 
 class Student:
-    """ Class that defines a student by
-    attributes:
-        first_name
-        last_name
-        age
-    """
+    """ Class that defines a student by"""
 
     def __init__(self, first_name, last_name, age):
         """ Function that instantiate attributes """
