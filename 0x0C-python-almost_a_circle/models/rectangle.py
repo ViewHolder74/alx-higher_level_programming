@@ -92,8 +92,9 @@ class Rectangle(Base):
         Rectangle instance with the character #
         """
         char = '#'
-        for i in range(self.height):
-            print(char * self.width)
+        print('\n' * self.y, end='')
+        for _ in range(self.height):
+            print(' ' * self.x + char * self.width)
 
     def __str__(self):
         return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y, self.width, self.height))
