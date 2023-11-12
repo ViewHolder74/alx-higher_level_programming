@@ -97,4 +97,34 @@ class Rectangle(Base):
             print(' ' * self.x + char * self.width)
 
     def __str__(self):
+        """
+        Function that it returns
+        [Rectangle] (<id>) <x>/<y> - <width>/<height>
+        """
         return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y, self.width, self.height))
+
+    def update(self, *args, **kwargs):
+        """
+        Function  that assigns an
+        argument to each attribute.
+        """
+        
+        if len(args) == 0:
+            for key, value in kwargs.items():
+                self.__setattr__(key, value)
+            return
+        try:
+            self.id = args[0]
+            self.width = args[1]
+            self.height = args[2]
+            self.x = args[3]
+            self.y = args[4]
+
+        except IndexError:
+            pass
+
+        def my_dict(self):
+            """ return dict repr."""
+            return ({'x': getattr(self, "x"), 'y': getattr(self, "y"),
+                'id': getattr(self, "id"), 'height': getattr(self, "height"),
+                'width': getattr(self, "width")})
