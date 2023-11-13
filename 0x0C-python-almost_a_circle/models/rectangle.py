@@ -124,8 +124,8 @@ class Rectangle(Base):
         except IndexError:
             pass
 
-        def my_dict(self):
-            """ return dict repr."""
-            return ({'x': getattr(self, "x"), 'y': getattr(self, "y"),
-                'id': getattr(self, "id"), 'height': getattr(self, "height"),
-                'width': getattr(self, "width")})
+    def to_dictionary(self):
+        """ return dict repr."""
+        return ({'x': getattr(self, "x"), 'y': getattr(self, "y"),
+            'id': getattr(self, "id"), 'height': getattr(self, "height"),
+            'width': getattr(self, "width")})

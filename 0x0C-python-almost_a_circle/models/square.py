@@ -25,6 +25,21 @@ class Square(Rectangle):
         self.width = value
         self.height = value
 
+    def update(self, *args, **kwargs):
+        """ function that assign arg to attributes."""
+        if (len) == 0:
+            for key, value in kwargs.items():
+                self.__setattr__(key, value)
+                return
+        try:
+            self.id = args[0]
+            self.size = args[1]
+            self.x = args[2]
+            self.y = args[3]
+
+        except IndexError:
+            pass
+
     def __str__(self):
         """ function that return
         [Square] (<id>) <x>/<y> - <size>
@@ -32,3 +47,14 @@ class Square(Rectangle):
         return("[{}] ({}) {}/{} - {}".format(type(self).__name__, self.id,
             self.x, self.y, self.width))
 
+    def to_dictionary(self):
+        """
+        function that return the
+        dictionary representation of a Rectangle
+        """
+        return ({
+                'id': getattr(self, "id"),
+                'x': getattr(self, "x"),
+                'size': getattr(self, "width"),
+                'y': getattr(self, "y")
+            })
