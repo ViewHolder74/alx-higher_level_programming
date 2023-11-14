@@ -50,8 +50,10 @@ class Square(Rectangle):
         """ function that return
         [Square] (<id>) <x>/<y> - <size>
         """
-        return("[{}] ({}) {}/{} - {}".format(type(self).__name__, self.id,
-            self.x, self.y, self.width))
+        return (
+            f"[{type(self).__name__}] {self.id}"
+            f"{self.x} {self.y} {self.width}"
+        )
 
     def to_dictionary(self):
         """
@@ -59,8 +61,8 @@ class Square(Rectangle):
         dictionary representation of a Rectangle
         """
         return ({
-                'id': getattr(self, "id"),
-                'x': getattr(self, "x"),
-                'size': getattr(self, "width"),
-                'y': getattr(self, "y")
+            'id': getattr(self, "id"),
+            'x': getattr(self, "x"),
+            'size': getattr(self, "width"),
+            'y': getattr(self, "y")
             })
