@@ -51,8 +51,9 @@ class Square(Rectangle):
         [Square] (<id>) <x>/<y> - <size>
         """
         return (
-            f"[{type(self).__name__}] {self.id}"
-            f"{self.x} {self.y} {self.width}"
+            "[{}] ({}) {}/{} - {}".format(
+                type(self).__name__, self.id, self.x, self.y, self.width
+            )
         )
 
     def to_dictionary(self):
