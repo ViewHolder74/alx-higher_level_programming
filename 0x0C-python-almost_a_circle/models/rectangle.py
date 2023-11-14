@@ -1,6 +1,8 @@
 #!/usr/bin/python3
+
+"""Rectangle Model"""
+
 from models.base import Base
-""" First Rectangle."""
 
 
 class Rectangle(Base):
@@ -8,11 +10,12 @@ class Rectangle(Base):
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """ function that instantiate prive attributes"""
+
+        super().__init__(id)
         self.width = width
         self.height = height
         self.x = x
         self.y = y
-        super().__init__(id)
 
     @property
     def width(self):
@@ -102,7 +105,7 @@ class Rectangle(Base):
         [Rectangle] (<id>) <x>/<y> - <width>/<height>
         """
         return ("[{}] ({}) {}/{} - {}/{}".format(type(self).__name__,
-            self.id, self.x, self.y, self.width, self.height))
+            self.id, self.__x, self.__y, self.__width, self.__height))
 
     def update(self, *args, **kwargs):
         """
