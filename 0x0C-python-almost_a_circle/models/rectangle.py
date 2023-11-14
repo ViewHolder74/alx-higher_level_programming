@@ -102,12 +102,12 @@ class Rectangle(Base):
     def __str__(self):
         """
         Function that it returns
-        [Rectangle] (<id>) <x>/<y> - <width>/<height>
+        [Rectangle] (<id>) <x>/<y> - <width>/<heigh>
         """
-
         return (
-            f"[{type(self).__name__}] ({self.id})"
-            f"{self.x}/{self.y} - {self.width}/{self.height}"
+            "[{}] ({}) {}/{} - {}/{}".format(
+                type(self).__name__, self.id, self.x, self.width, self.height
+            )
         )
 
     def update(self, *args, **kwargs):
