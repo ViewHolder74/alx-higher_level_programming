@@ -103,16 +103,20 @@ class Rectangle(Base):
         """
         Function that it returns
         [Rectangle] (<id>) <x>/<y> - <width>/<height>
-        """
         return ("[{}] ({}) {}/{} - {}/{}".format(type(self).__name__,
             self.id, self.x, self.y, self.width, self.height))
+        """
+
+        return (
+            f"[{type(self).__name__}] ({self.id})"
+            f"{self.x}/{self.y} - {self.width}/{self.height}"
+        )
 
     def update(self, *args, **kwargs):
         """
         Function  that assigns an
         argument to each attribute.
         """
-        
         if len(args) == 0:
             for key, value in kwargs.items():
                 self.__setattr__(key, value)
@@ -120,7 +124,7 @@ class Rectangle(Base):
 
         try:
             self.id = args[0]
-            self.width =args[1]
+            self.width = args[1]
             self.height = args[2]
             self.x = args[3]
             self.y = args[4]
@@ -130,6 +134,10 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """ return dict repr."""
-        return ({'x': getattr(self, "x"), 'y': getattr(self, "y"),
-            'id': getattr(self, "id"), 'height': getattr(self, "height"),
-            'width': getattr(self, "width")})
+        return ({
+            'x': getattr(self, "x"),
+            'y': getattr(self, "y"),
+            'id': getattr(self, "id"),
+            'height': getattr(self, "height"),
+            'width': getattr(self, "width")
+        })
