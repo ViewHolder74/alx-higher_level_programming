@@ -76,5 +76,5 @@ class Base:
         filename = cls.__name__ + ".json"
         with open(filename) as f:
             my_list = Base.from_json_string(f.read())
-            return ([cls.create(**j) for j in my_list]))
+            return ([cls.create(**j) for j in my_list])
         return ([])
