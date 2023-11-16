@@ -49,8 +49,8 @@ class Base:
         representation json_string.
         """
 
-        if json_string is None or json_string == []:
-            return ("[]")
+        if json_string is None or json_string == "[]":
+            return ([])
         else:
             return (json.loads(json_string))
 
@@ -65,7 +65,18 @@ class Base:
                 obj = cls(4, 6)
 
             else:
-                obj = cls(4, 6)
+                obj = cls(4)
 
             obj.update(**dictionary)
             return (obj)
+
+    @classmethod
+    def load_from_file(cls):
+        """Function that returns a list of instances."""
+
+        filename = cls.__name__ + ".json"
+        with open(filename) as f:
+            my_list = Base.from_json_string(f.read())
+            return ([cls.create(**j) for j in my_list])
+
+        return ([])
