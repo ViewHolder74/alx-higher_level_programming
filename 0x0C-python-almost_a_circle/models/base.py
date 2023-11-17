@@ -102,6 +102,7 @@ class Base:
                 writer = csv.DictWriter(f, fieldnames=fieldnames)
                 for obj in list_objs:
                     writer.writerow(obj.to_dictionary())
+
     @classmethod
     def load_from_file_csv(cls):
         """Function that deserializes CSV"""
@@ -116,13 +117,13 @@ class Base:
                     fieldnames = ["id", "size", "x", "y"]
 
                 dicts = csv.DictReader(f, fieldnames=fieldnames)
-                dicts = [dict([k, int(v)] for k, v in d.items())
+                dicts = [
+                    dict([k, int(v)] for k, v in d.items())
                     for d in dicts
-                ]
+                    ]
                 return (
                     [cls.create(**d) for d in dicts]
                 )
 
         except IOError:
             return ([])
-
